@@ -6256,3 +6256,10 @@ blockquote.pullquote.right {
   background-color: var(--readmode-light-color) !important;
   color: var(--font-color);
 }
+body {
+  cursor: url("https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur"), default;
+}
+/**链接指针样式**/
+a:hover {
+  cursor: url("https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/pointer.cur"), pointer;
+}
