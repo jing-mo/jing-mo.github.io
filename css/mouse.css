@@ -56,21 +56,6 @@ span:first-child {
     width: auto;
     min-width: 50%;
 }
-
-/* 页脚透明 */
-
-#footer {
-    background: transparent !important;
-}
-
-/*移动端优化：去除归档、标签、最新文章、公告、、只保留网站统计*/
-
-@media screen and (max-width: 800px) {
-    #aside_content div:not(:last-child) {
-        display: none;
-        font-size: 13px;
-    }
-}
 /* 自定义字体 */
 @font-face {
     font-family: 'sleek';

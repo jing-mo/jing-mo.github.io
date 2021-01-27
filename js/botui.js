@@ -4,11 +4,11 @@ var OriginTitle = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
-        $('[rel="icon"]').attr('href', "/img/favicon.ico");
+        $('[rel="icon"]').attr('href', "/img/hello.ico");
         document.title = '(つェ⊂) 我藏好了哦~~';
         clearTimeout(titleTime);
     } else {
-        $('[rel="icon"]').attr('href', "/img/favicon.ico");
+        $('[rel="icon"]').attr('href', "/img/hello.ico");
         document.title = '(*´∇｀*) 被你发现啦~~' + OriginTitle;
         titleTime = setTimeout(function() {
             document.title = OriginTitle;
@@ -87,7 +87,7 @@ for (var i = 0; i < card_category_list.length; i++) {
 }
 
 //养鱼
-var xiaokang = new xkTool(param1,param2);
+var xiaokang = new xkTool();
 xiaokang.consoleAnchor();
 xiaokang.footFish();
  
