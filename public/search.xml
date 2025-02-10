@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="posts/0.html"/>
+      <url>posts/0.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="预测模型"><a href="#预测模型" class="headerlink" title="预测模型"></a>预测模型</h1><h2 id="什么叫数据分析"><a href="#什么叫数据分析" class="headerlink" title="什么叫数据分析"></a>什么叫数据分析</h2><ul><li><p>通过对大量的数据进行科学的分析</p></li><li><p>得出结论，提出建议，辅助公司企业的决策</p></li></ul><h2 id="数据分析的步骤"><a href="#数据分析的步骤" class="headerlink" title="数据分析的步骤"></a>数据分析的步骤</h2><ul><li><p><strong>明确目的</strong></p></li><li><p><strong>收集数据</strong>（爬虫）</p></li><li><p><strong>数据处理</strong></p></li><li><p><strong>数据分析</strong> 基本的数据分析（业务）、数据挖掘（代码、算法）</p></li><li><p><strong>数据报告</strong> ppt、word、可视化（python、PowerBI、）</p></li></ul><h2 id="一元线性回归（高中学过）"><a href="#一元线性回归（高中学过）" class="headerlink" title="一元线性回归（高中学过）"></a>一元线性回归（高中学过）</h2><h2 id="python实战"><a href="#python实战" class="headerlink" title="python实战"></a>python实战</h2><p>cmd下载包</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install pandas #表格工具</span><br><span class="line">pip install seaborn #绘制图形的工具</span><br><span class="line">pip install matplotlib #显示界面的工具</span><br><span class="line">pip install statsmodels #计算线性回归的工具</span><br></pre></td></tr></table></figure><p>import到python项目中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java面经刷题_Day1</title>
       <link href="posts/c83c.html"/>
       <url>posts/c83c.html</url>
