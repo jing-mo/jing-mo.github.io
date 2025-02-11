@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>2025年java学习笔记</title>
+      <link href="posts/5e8c.html"/>
+      <url>posts/5e8c.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="学习计划"><a href="#学习计划" class="headerlink" title="学习计划"></a>学习计划</h1><ol><li>Java基础<br>集合(list、map、set)、多线程、序列化等</li><li>Mysql.<br>基本语法、索引底层数据结构、Explain、事务机制、锁、MVCC原理(可了解就行)、MySQL日志机制</li><li>Redis<br>核心数据结构、持久化、主从架构、哨兵架构等原理。可以看看一些缓存设计案例</li><li>JVM<br>类加载机制、内存模型、内存分配机制、各种垃圾收集器原理、三色标计算法</li><li>RocketMQ<br>原理、搭建集群实现<br>6.并发编程<br>并发、线程与等待通知机制、内存泄漏、线程池</li><li>springboot<br>尽量去看看源码，以及一些常用注解</li><li>springcloud Alibab<br>框架学习(包括其中各组组件等等、一般包括原理、使用、配置等)</li></ol><h1 id="学习记录"><a href="#学习记录" class="headerlink" title="学习记录"></a>学习记录</h1><h2 id="Java集合"><a href="#Java集合" class="headerlink" title="Java集合"></a>Java集合</h2><h3 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h3><p>集合又叫容器</p><p><code>Collection</code>接口，主要用于存放单一元素：<code>List</code>、<code>Set</code> 、 <code>Queue</code></p><p><code>Map</code> 接口，主要用于存放键值对</p><p><img src="../photo/java-collection-hierarchy.png"></p><ul><li><code>List</code>(对付顺序的好帮手): 存储的元素是<strong>有序</strong>的、可<strong>重复</strong>的。</li><li><code>Set</code>(注重独一无二的性质): 存储的元素<strong>不可重复</strong>的。</li><li><code>Queue</code>(实现排队功能的叫号机): 按特定的<strong>排队规则</strong>来确定先后顺序，存储的元素是<strong>有序的、可重复</strong>的。</li><li><code>Map</code>(用 key 来搜索的专家): 使用<strong>键值对</strong>（key-value）存储，类似于数学上的函数 y=f(x)，”x” 代表 key，”y” 代表 value，<strong>key 是无序的、不可重复的，value 是无序的、可重复的，每个键最多映射到一个值</strong>。</li></ul><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>ArrayList</p><p>Vector</p><p>LinkedList JDK6之前是循环列表，现在是双向链表</p><h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p><code>HashSet</code>(无序，唯一): 基于 <code>HashMap</code> 实现的，底层采用 <code>HashMap</code> 来保存元素。</p><p><code>LinkedHashSet</code>: <code>LinkedHashSet</code> 是 <code>HashSet</code> 的子类，并且其内部是通过 <code>LinkedHashMap</code> 来实现的。</p><p><code>TreeSet</code>(有序，唯一): 红黑树(自平衡的排序二叉树)。</p><h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><p><code>PriorityQueue</code>: <code>Object[]</code> 数组来实现小顶堆</p><p><code>DelayQueue</code>:<code>PriorityQueue</code></p><p><code>ArrayDeque</code>: 可扩容动态双向数组</p><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p><code>HashMap</code>：JDK1.8 之前 <code>HashMap</code> 由<strong>数组+链表</strong>组成的，数组是 <code>HashMap</code> 的主体，链表则是主要为了解决哈希冲突而存在的（“拉链法”解决冲突）。JDK1.8 以后在解决哈希冲突时有了较大的变化，当链表长度<strong>大于阈值（默认为 8）</strong>（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行<strong>数组扩容</strong>，而不是转换为红黑树）时，将链表转化为<strong>红黑树</strong>，以减少搜索时间。</p><p><code>LinkedHashMap</code>：<code>LinkedHashMap</code> 继承自 <code>HashMap</code>，所以它的底层仍然是基于拉链式散列结构即由数组和链表或红黑树组成。另外，<code>LinkedHashMap</code> 在上面结构的基础上，增加了一条双向链表，使得上面的结构可以保持键值对的插入顺序。同时通过对链表进行相应的操作，实现了访问顺序相关逻辑。</p><p><code>Hashtable</code>：数组+链表组成的，数组是<code>Hashtable</code> 的主体，链表则是主要为了解决哈希冲突而存在的。</p><p>TreeMap`：红黑树（自平衡的排序二叉树）。</p><blockquote><p>键值对——Map 需要排序：TreeMap 不需要排序：HashMap 保证线程安全就选用 <code>ConcurrentHashMap</code></p><p>只需要存放元素值时，就选择实现<code>Collection</code> 接口的集合，需要保证元素唯一时选择实现 <code>Set</code> 接口的集合比如 <code>TreeSet</code> 或 <code>HashSet</code>，不需要就选择实现 <code>List</code> 接口的比如 <code>ArrayList</code> 或 <code>LinkedList</code></p><p>集合大小可变、支持泛型、具有内建算法，灵活性高，适合现代软件开发多样化数据</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java面经刷题_Day1</title>
       <link href="posts/c83c.html"/>
       <url>posts/c83c.html</url>
