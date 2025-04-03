@@ -1,0 +1,2 @@
+touch public/.nojekyll  # 在本地生成
+hexo deploy
