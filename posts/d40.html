@@ -345,7 +345,7 @@ if (fontSizeVal !== undefined) {
 <p>(integer) 1</p>
 <p>当value是hash类型，hash类型可以理解为字典，需要给value指定一个field用于映射，命令包括hset hmset hget hgetall hdel hincrby del 等。</p>
 <blockquote>
-<p>hset user:1000 name “John Smith”   &#x2F;&#x2F; 给value指定一个field，比如name<br>(integer) 1<br>hset user:1000 email “<a href="mailto:&#106;&#111;&#104;&#x6e;&#46;&#115;&#x6d;&#105;&#116;&#104;&#64;&#x65;&#120;&#97;&#109;&#x70;&#108;&#101;&#x2e;&#x63;&#x6f;&#109;">john.smith@example.com</a>“<br>(integer) 1<br>hset user:1000 password “s3cret”<br>(integer) 1<br>hgetall user:1000   &#x2F;&#x2F; 获得hash表中所有成员，包括field和value  </p>
+<p>hset user:1000 name “John Smith”   &#x2F;&#x2F; 给value指定一个field，比如name<br>(integer) 1<br>hset user:1000 email “<a href="mailto:&#106;&#111;&#104;&#110;&#46;&#115;&#109;&#x69;&#x74;&#104;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;">john.smith@example.com</a>“<br>(integer) 1<br>hset user:1000 password “s3cret”<br>(integer) 1<br>hgetall user:1000   &#x2F;&#x2F; 获得hash表中所有成员，包括field和value  </p>
 </blockquote>
 <ol>
 <li><p>“name”  </p>
@@ -354,14 +354,14 @@ if (fontSizeVal !== undefined) {
 </li>
 <li><p>“email”  </p>
 </li>
-<li><p>“<a href="mailto:&#106;&#x6f;&#x68;&#110;&#46;&#115;&#109;&#105;&#116;&#x68;&#64;&#x65;&#120;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;">john.smith@example.com</a>“  </p>
+<li><p>“<a href="mailto:&#x6a;&#111;&#104;&#110;&#x2e;&#115;&#x6d;&#x69;&#x74;&#x68;&#x40;&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;">john.smith@example.com</a>“  </p>
 </li>
 <li><p>“password”  </p>
 </li>
 <li><p>“s3cret”  
    </p>
 <blockquote>
-<p>hmset user:1001 name “Mary Jones” password “hidden” email<br>“<a href="mailto:&#x6d;&#x6a;&#111;&#110;&#101;&#x73;&#x40;&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#109;">mjones@example.com</a>“   &#x2F;&#x2F; 设置多个field和value<br>OK<br>hget user:1001 name   &#x2F;&#x2F; 根据field获取value<br>“Mary Jones”<br>  <br>hset user:1000 visits 10    &#x2F;&#x2F; field可以映射到数字值<br>(integer) 1<br>hincrby user:1000 visits 1    &#x2F;&#x2F; 原子性增加value的值，增加1<br>(integer) 11<br>hincrby user:1000 visits 10    &#x2F;&#x2F; 增加10<br>(integer) 21<br>hdel user:1000 visits      &#x2F;&#x2F; 删除field及其value<br>(integer) 1<br>hincrby user:1000 visits 1<br>(integer) 1<br> <br>del user:1000     &#x2F;&#x2F; 删除key</p>
+<p>hmset user:1001 name “Mary Jones” password “hidden” email<br>“<a href="mailto:&#109;&#106;&#x6f;&#110;&#x65;&#115;&#64;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#99;&#111;&#x6d;">mjones@example.com</a>“   &#x2F;&#x2F; 设置多个field和value<br>OK<br>hget user:1001 name   &#x2F;&#x2F; 根据field获取value<br>“Mary Jones”<br>  <br>hset user:1000 visits 10    &#x2F;&#x2F; field可以映射到数字值<br>(integer) 1<br>hincrby user:1000 visits 1    &#x2F;&#x2F; 原子性增加value的值，增加1<br>(integer) 11<br>hincrby user:1000 visits 10    &#x2F;&#x2F; 增加10<br>(integer) 21<br>hdel user:1000 visits      &#x2F;&#x2F; 删除field及其value<br>(integer) 1<br>hincrby user:1000 visits 1<br>(integer) 1<br> <br>del user:1000     &#x2F;&#x2F; 删除key</p>
 </blockquote>
 </li>
 </ol>
